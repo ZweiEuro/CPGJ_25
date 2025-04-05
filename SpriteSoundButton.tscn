@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdnutfbk01qdu"]
+[gd_scene load_steps=6 format=3 uid="uid://bdnutfbk01qdu"]
 
 [ext_resource type="Script" uid="uid://cdpvpcci03ery" path="res://texture_button.gd" id="1_sw308"]
 
@@ -10,6 +10,9 @@ blend_mode = 1
 [sub_resource type="CanvasTexture" id="CanvasTexture_x2533"]
 diffuse_texture = SubResource("PlaceholderTexture2D_gjwje")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdb6q"]
+size = Vector2(265, 227.25)
+
 [node name="TextureButton" type="TextureButton"]
 material = SubResource("CanvasItemMaterial_xi38y")
 offset_right = 100.0
@@ -19,5 +22,12 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("1_sw308")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(132.5, 113.375)
+shape = SubResource("RectangleShape2D_cdb6q")
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

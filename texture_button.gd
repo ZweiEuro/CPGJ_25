@@ -74,8 +74,7 @@ func on_audio_played():
 	if(self.machine_state == MachineState.start):
 		self.audio_player.stream = audio_loop_stream;
 		self.audio_player.play()
-					
-				
+		
 func _on_pressed() -> void:
 	
 	# clicking sound effect
@@ -85,13 +84,21 @@ func _on_pressed() -> void:
 	
 	
 	# transition the statea machine
-	self.audio_player.stop();
-	if( self.machine_state == MachineState.stop):
-		self.machine_state = MachineState.start
-		self.audio_player.stream = audio_windup_stream;
-	else:
+
+	if( self.machine_state != MachineState.stop):
 		self.audio_player.stream = audio_winddown_stream;
 		self.machine_state = MachineState.stop
+		self.audio_player.play()
+	select_texture()
+	
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	self.audio_player.stop();
+	self.machine_state = MachineState.start
+	self.audio_player.stream = audio_windup_stream;
 	self.audio_player.play()
+	
 	select_texture()
 	

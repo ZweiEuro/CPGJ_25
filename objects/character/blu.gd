@@ -39,10 +39,6 @@ func tween_end():
 		new_goal = Globals.get_random_room()
 	self.go_to_pos(new_goal)
 	
-	
-
-
-
 func go_to_pos(goal_pos: Globals.Position):
 	
 	var current_route: Array[Position];
@@ -106,7 +102,6 @@ func go_to_pos(goal_pos: Globals.Position):
 	var tween = get_tree().create_tween()
 	
 	for pos in current_route:
-		print(Globals.Position.keys()[pos])
 		var point:Vector2 = $"../House".get_room_point(pos);
 		tween.tween_property(self, "position", point, 1)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ird8d118ncdq"]
+[gd_scene load_steps=6 format=3 uid="uid://ird8d118ncdq"]
 
 [ext_resource type="Texture2D" uid="uid://4eyhx7kpptum" path="res://objects/character/calm.svg" id="1_egqiw"]
 [ext_resource type="Script" uid="uid://g0shsjx4hfo7" path="res://objects/character/blu.gd" id="2_t5ras"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nes65"]
 diffuse_texture = ExtResource("3_nes65")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nes65"]
+size = Vector2(180, 363)
 
 [node name="blu" type="Sprite2D"]
 texture = ExtResource("1_egqiw")
@@ -26,3 +29,10 @@ spread = 0.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 1000.0
 initial_velocity_max = 1000.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_nes65")
