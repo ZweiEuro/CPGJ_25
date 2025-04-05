@@ -76,7 +76,6 @@ func on_audio_played():
 		self.audio_player.play()
 		
 func _on_pressed() -> void:
-	
 	# clicking sound effect
 	self.click_audio_player.stop();
 	self.click_audio_player.stream = mouse_click_interaction_streams[randi_range(0, len(mouse_click_interaction_streams) - 1)];
@@ -90,15 +89,23 @@ func _on_pressed() -> void:
 		self.machine_state = MachineState.stop
 		self.audio_player.play()
 	select_texture()
-	
 
+func _on_area_2d_area_entered(_area: Area2D) -> void:
+	if( self.machine_state == MachineState.stop):
+		self.audio_player.stop();
+		self.machine_state = MachineState.start
+		self.audio_player.stream = audio_windup_stream;
+		self.audio_player.play()
+		select_texture()
 
+signal power_drained
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	self.audio_player.stop();
-	self.machine_state = MachineState.start
-	self.audio_player.stream = audio_windup_stream;
-	self.audio_player.play()
-	
-	select_texture()
-	
+var time_turned_on = 0.0 
+
+func _process(delta: float) -> void:
+	if (self.machine_state != MachineState.stop):
+		time_turned_on += delta;
+		
+	if( time_turned_on >= 1 ):
+		time_turned_on -= 1.0;
+		power_drained.emit()

@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=10 format=3 uid="uid://3cv06u1fja7u"]
 
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
 [ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://objects/house/main_background.svg" id="2_4o060"]
 [ext_resource type="Script" uid="uid://8ilgkf1yi3dx" path="res://objects/house/house.gd" id="2_w2oyl"]
 [ext_resource type="Texture2D" uid="uid://cs7qoov1kgvob" path="res://images/deco/tree_1.svg" id="3_7i2su"]
 [ext_resource type="Texture2D" uid="uid://55532tcoc11" path="res://images/deco/bushes.svg" id="3_vrlb1"]
+[ext_resource type="PackedScene" uid="uid://8iqd2okhe2nf" path="res://objects/house/battery/battery.tscn" id="3_wtlvq"]
 [ext_resource type="PackedScene" uid="uid://ird8d118ncdq" path="res://objects/character/blu.tscn" id="4_mgw7d"]
 [ext_resource type="Texture2D" uid="uid://dmjbwus0553hi" path="res://images/deco/tree_3.svg" id="4_w2oyl"]
+[ext_resource type="AudioStream" uid="uid://c0ok76ry07eeb" path="res://general_sounds/score/music_mainTheme_loopV1.wav" id="9_bulkk"]
 
 [node name="HouseScene" type="Node2D"]
 
@@ -22,17 +24,6 @@ position = Vector2(531, 322)
 scale = Vector2(0.610743, 0.581926)
 texture = ExtResource("2_4o060")
 script = ExtResource("2_w2oyl")
-
-[node name="TV" parent="House" instance=ExtResource("1_gjwje")]
-offset_left = -277.0
-offset_top = 260.0
-offset_right = -98.0
-offset_bottom = 379.0
-texture_on_path = "uid://cb5ns2pmk3823"
-texture_off_path = "uid://bouiodoli26wj"
-audio_windup_path = "uid://bwxxpehf51tr8"
-audio_loop_path = "uid://djr4ao0e8ke1v"
-audio_winddown_path = "uid://c23v3i1ujjn8"
 
 [node name="points" type="Node2D" parent="House"]
 
@@ -73,6 +64,22 @@ position = Vector2(-130.988, -199.338)
 [node name="lampl3" type="Node2D" parent="House/points"]
 position = Vector2(139.175, -237.144)
 
+[node name="battery" parent="House" instance=ExtResource("3_wtlvq")]
+position = Vector2(371.678, 146.067)
+
+[node name="appliances" type="Node2D" parent="House"]
+
+[node name="TV" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -277.0
+offset_top = 260.0
+offset_right = -98.0
+offset_bottom = 379.0
+texture_on_path = "uid://cb5ns2pmk3823"
+texture_off_path = "uid://bouiodoli26wj"
+audio_windup_path = "uid://bwxxpehf51tr8"
+audio_loop_path = "uid://djr4ao0e8ke1v"
+audio_winddown_path = "uid://c23v3i1ujjn8"
+
 [node name="Tree1" type="Sprite2D" parent="."]
 position = Vector2(1076, 456)
 texture = ExtResource("3_7i2su")
@@ -92,3 +99,8 @@ texture = ExtResource("3_vrlb1")
 [node name="blu" parent="." instance=ExtResource("4_mgw7d")]
 position = Vector2(1268, 545)
 scale = Vector2(0.244297, 0.196691)
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_bulkk")
+volume_db = -5.445
+autoplay = true

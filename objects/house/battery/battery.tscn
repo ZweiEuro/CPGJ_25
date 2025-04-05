@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://8iqd2okhe2nf"]
+
+[ext_resource type="Texture2D" uid="uid://d24i3htktmtqj" path="res://objects/house/battery/bat-1.svg" id="1_3s1qy"]
+[ext_resource type="Script" uid="uid://c7qg0wjq0k2ig" path="res://objects/house/battery/battery.gd" id="1_xjq3l"]
+
+[node name="battery" type="Sprite2D"]
+texture = ExtResource("1_3s1qy")
+centered = false
+script = ExtResource("1_xjq3l")
