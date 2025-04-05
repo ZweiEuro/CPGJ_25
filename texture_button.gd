@@ -25,7 +25,11 @@ var audio_winddown_stream: AudioStreamWAV = null;
 
 var click_audio_player: AudioStreamPlayer2D = null;
 
-@export_file var mouse_click_interaction_paths: Array[String]
+var mouse_click_interaction_paths: Array[String] = ["res://general_sounds/ui_mouse_pressed_01.wav",
+"res://general_sounds/ui_mouse_pressed_02.wav",
+"res://general_sounds/ui_mouse_pressed_03.wav",
+"res://general_sounds/ui_mouse_pressed_04.wav"]
+
 var mouse_click_interaction_streams: Array[AudioStreamWAV] = [];
 
 enum MachineState { start, loop, stop}

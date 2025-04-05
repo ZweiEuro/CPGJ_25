@@ -6,7 +6,6 @@
 blend_mode = 1
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gjwje"]
-size = Vector2(100, 100)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_x2533"]
 diffuse_texture = SubResource("PlaceholderTexture2D_gjwje")
@@ -16,6 +15,8 @@ material = SubResource("CanvasItemMaterial_xi38y")
 offset_right = 100.0
 offset_bottom = 100.0
 texture_normal = SubResource("CanvasTexture_x2533")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("1_sw308")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

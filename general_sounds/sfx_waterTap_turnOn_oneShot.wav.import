@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://drqw50vhcqn0f"
-path="res://.godot/imported/sfx_waterTap_turnOn_oneShot.wav-0dcfe57acc66ac58a4889246957da37f.sample"
+path="res://.godot/imported/sfx_waterTap_turnOn_oneShot.wav-d891da2b6df63141534abf5d4572ffcf.sample"
 
 [deps]
 
-source_file="res://general/sfx_waterTap_turnOn_oneShot.wav"
-dest_files=["res://.godot/imported/sfx_waterTap_turnOn_oneShot.wav-0dcfe57acc66ac58a4889246957da37f.sample"]
+source_file="res://general_sounds/sfx_waterTap_turnOn_oneShot.wav"
+dest_files=["res://.godot/imported/sfx_waterTap_turnOn_oneShot.wav-d891da2b6df63141534abf5d4572ffcf.sample"]
 
 [params]
 

@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=3 format=3 uid="uid://3cv06u1fja7u"]
 
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
+[ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://images/main_background.svg" id="2_4o060"]
 
 [node name="HouseScene" type="Node2D"]
 
-[node name="TextureButton" parent="." instance=ExtResource("1_gjwje")]
+[node name="HouseBg" type="Sprite2D" parent="."]
+position = Vector2(204.5, 327.75)
+scale = Vector2(0.547745, 0.578501)
+texture = ExtResource("2_4o060")
+
+[node name="TV" parent="." instance=ExtResource("1_gjwje")]
+offset_left = 53.0
+offset_top = 478.0
+offset_right = 150.0
+offset_bottom = 547.0
+texture_on_path = "uid://cb5ns2pmk3823"
+texture_off_path = "uid://bouiodoli26wj"
 audio_windup_path = "uid://bwxxpehf51tr8"
 audio_loop_path = "uid://djr4ao0e8ke1v"
 audio_winddown_path = "uid://c23v3i1ujjn8"
-mouse_click_interaction_paths = Array[String](["uid://bmjtqswu8q1gr", "uid://e7cwv7k865qq", "uid://bh7t1yqgx6l1s", "uid://b5apecvjov86g"])

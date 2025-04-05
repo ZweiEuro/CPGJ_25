@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://e7cwv7k865qq"
-path="res://.godot/imported/ui_mouse_hover_02.wav-3d7af07bd9a2abea23646cb74ff4d46a.sample"
+path="res://.godot/imported/ui_mouse_hover_02.wav-076294b8d66bc8dd81297fe86f6d4db8.sample"
 
 [deps]
 
-source_file="res://general/ui_mouse_hover_02.wav"
-dest_files=["res://.godot/imported/ui_mouse_hover_02.wav-3d7af07bd9a2abea23646cb74ff4d46a.sample"]
+source_file="res://general_sounds/ui_mouse_hover_02.wav"
+dest_files=["res://.godot/imported/ui_mouse_hover_02.wav-076294b8d66bc8dd81297fe86f6d4db8.sample"]
 
 [params]
 

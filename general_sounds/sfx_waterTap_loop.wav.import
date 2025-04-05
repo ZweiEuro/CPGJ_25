@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ra2foq48lmqc"
-path="res://.godot/imported/sfx_waterTap_loop.wav-c6548f9ca2d8ae5a57cc00be0ee35124.sample"
+path="res://.godot/imported/sfx_waterTap_loop.wav-43a3f84acba1463c608370bbd582d4e4.sample"
 
 [deps]
 
-source_file="res://general/sfx_waterTap_loop.wav"
-dest_files=["res://.godot/imported/sfx_waterTap_loop.wav-c6548f9ca2d8ae5a57cc00be0ee35124.sample"]
+source_file="res://general_sounds/sfx_waterTap_loop.wav"
+dest_files=["res://.godot/imported/sfx_waterTap_loop.wav-43a3f84acba1463c608370bbd582d4e4.sample"]
 
 [params]
 
