@@ -35,25 +35,11 @@ var mouse_click_interaction_streams: Array[AudioStreamWAV] = [];
 enum MachineState { start, loop, stop}
 var machine_state: MachineState  = MachineState.stop;
 
-func load_file_from_path(filePath:  String, ext: String, alternative_file = ""):
-	var ret = null
-	
-	if(filePath == ""):
-		if(alternative_file != ""):
-			ret = load_file_from_path(alternative_file, "svg");
-	else:
-		if(ext == "wav"):
-			ret = AudioStreamWAV.load_from_file(filePath);
-		if(ext == "svg"):
-			var image = Image.load_from_file(filePath)
-			ret = ImageTexture.create_from_image(image)
-	
-	return ret;
 
 func _ready():
 	
-	texture_on = load_file_from_path(texture_on_path, "svg", "res://placeholder/icon_on.svg")
-	texture_off = load_file_from_path(texture_off_path, "svg", "res://placeholder/icon_off.svg")
+	texture_on = Globals.load_file_from_path(texture_on_path, "svg", "res://placeholder/icon_on.svg")
+	texture_off = Globals.load_file_from_path(texture_off_path, "svg", "res://placeholder/icon_off.svg")
 	
 	audio_player = AudioStreamPlayer2D.new();
 	self.audio_player.finished.connect(self.on_audio_played)
@@ -63,12 +49,12 @@ func _ready():
 	self.click_audio_player.finished.connect(self.on_audio_played)
 	self.add_child(click_audio_player);
 	
-	audio_windup_stream = load_file_from_path(audio_windup_path, "wav")
-	audio_loop_stream = load_file_from_path(audio_loop_path, "wav")
-	audio_winddown_stream = load_file_from_path(audio_winddown_path, "wav")
+	audio_windup_stream = Globals.load_file_from_path(audio_windup_path, "wav")
+	audio_loop_stream = Globals.load_file_from_path(audio_loop_path, "wav")
+	audio_winddown_stream = Globals.load_file_from_path(audio_winddown_path, "wav")
 	
 	for path in mouse_click_interaction_paths:
-		var file = load_file_from_path(path,"wav")
+		var file = Globals.load_file_from_path(path,"wav")
 		if file == null:
 			print("ERR: could not load interaction file? ", path)
 		mouse_click_interaction_streams.push_back(file);

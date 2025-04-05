@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2lv4dkep2e68"
-path="res://.godot/imported/main_background.svg-cb688821187c38840570bd8c02e8696e.ctex"
+uid="uid://dantjvnkbmot8"
+path="res://.godot/imported/bat-2.svg-f5d872ee3bbc66328a1da0c34feebef1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/main_background.svg"
-dest_files=["res://.godot/imported/main_background.svg-cb688821187c38840570bd8c02e8696e.ctex"]
+source_file="res://objects/battery/bat-2.svg"
+dest_files=["res://.godot/imported/bat-2.svg-f5d872ee3bbc66328a1da0c34feebef1.ctex"]
 
 [params]
 

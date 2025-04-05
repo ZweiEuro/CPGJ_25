@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1devl588dnus"
-path="res://.godot/imported/angry.svg-834ebe143a002b59e29b8db6a70ed75b.ctex"
+uid="uid://d24i3htktmtqj"
+path="res://.godot/imported/bat-1.svg-f983812e82d4859d3ee5fa280c30610c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/character/angry.svg"
-dest_files=["res://.godot/imported/angry.svg-834ebe143a002b59e29b8db6a70ed75b.ctex"]
+source_file="res://objects/battery/bat-1.svg"
+dest_files=["res://.godot/imported/bat-1.svg-f983812e82d4859d3ee5fa280c30610c.ctex"]
 
 [params]
 

@@ -14,3 +14,7 @@ config/name="CPGJ"
 run/main_scene="uid://3cv06u1fja7u"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Globals.gd"

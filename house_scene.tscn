@@ -1,22 +1,94 @@
-[gd_scene load_steps=3 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=8 format=3 uid="uid://3cv06u1fja7u"]
 
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
-[ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://images/main_background.svg" id="2_4o060"]
+[ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://objects/house/main_background.svg" id="2_4o060"]
+[ext_resource type="Script" uid="uid://8ilgkf1yi3dx" path="res://objects/house/house.gd" id="2_w2oyl"]
+[ext_resource type="Texture2D" uid="uid://cs7qoov1kgvob" path="res://images/deco/tree_1.svg" id="3_7i2su"]
+[ext_resource type="Texture2D" uid="uid://55532tcoc11" path="res://images/deco/bushes.svg" id="3_vrlb1"]
+[ext_resource type="PackedScene" uid="uid://ird8d118ncdq" path="res://objects/character/blu.tscn" id="4_mgw7d"]
+[ext_resource type="Texture2D" uid="uid://dmjbwus0553hi" path="res://images/deco/tree_3.svg" id="4_w2oyl"]
 
 [node name="HouseScene" type="Node2D"]
 
-[node name="HouseBg" type="Sprite2D" parent="."]
-position = Vector2(204.5, 327.75)
-scale = Vector2(0.547745, 0.578501)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(621, 727)
+scale = Vector2(42.5842, 1.20614)
 texture = ExtResource("2_4o060")
+region_enabled = true
+region_rect = Rect2(374.443, 434.861, 32.6555, 270.574)
 
-[node name="TV" parent="." instance=ExtResource("1_gjwje")]
-offset_left = 53.0
-offset_top = 478.0
-offset_right = 150.0
-offset_bottom = 547.0
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(531, 322)
+scale = Vector2(0.610743, 0.581926)
+texture = ExtResource("2_4o060")
+script = ExtResource("2_w2oyl")
+
+[node name="TV" parent="House" instance=ExtResource("1_gjwje")]
+offset_left = -277.0
+offset_top = 260.0
+offset_right = -98.0
+offset_bottom = 379.0
 texture_on_path = "uid://cb5ns2pmk3823"
 texture_off_path = "uid://bouiodoli26wj"
 audio_windup_path = "uid://bwxxpehf51tr8"
 audio_loop_path = "uid://djr4ao0e8ke1v"
 audio_winddown_path = "uid://c23v3i1ujjn8"
+
+[node name="points" type="Node2D" parent="House"]
+
+[node name="kitchen" type="Node2D" parent="House/points"]
+position = Vector2(201.394, 488.035)
+scale = Vector2(1.63735, 1.71843)
+
+[node name="living_room" type="Node2D" parent="House/points"]
+position = Vector2(-221.042, 512.093)
+
+[node name="bath" type="Node2D" parent="House/points"]
+position = Vector2(-203.031, 154.659)
+
+[node name="level1" type="Node2D" parent="House/points"]
+position = Vector2(13.0988, 493.19)
+
+[node name="bedroom" type="Node2D" parent="House/points"]
+position = Vector2(222.68, 146.067)
+
+[node name="level2" type="Node2D" parent="House/points"]
+position = Vector2(9.8241, 137.475)
+
+[node name="level3" type="Node2D" parent="House/points"]
+position = Vector2(11.4615, -214.804)
+
+[node name="entry" type="Node2D" parent="House/points"]
+position = Vector2(397.876, 503.5)
+
+[node name="spawn" type="Node2D" parent="House/points"]
+position = Vector2(1108.49, 431.326)
+
+[node name="garden" type="Node2D" parent="House/points"]
+position = Vector2(-648.391, 414.142)
+
+[node name="console" type="Node2D" parent="House/points"]
+position = Vector2(-130.988, -199.338)
+
+[node name="lampl3" type="Node2D" parent="House/points"]
+position = Vector2(139.175, -237.144)
+
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(1076, 456)
+texture = ExtResource("3_7i2su")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(122, 432)
+texture = ExtResource("4_w2oyl")
+
+[node name="Bushes2" type="Sprite2D" parent="."]
+position = Vector2(1564, 584)
+texture = ExtResource("3_vrlb1")
+
+[node name="Bushes3" type="Sprite2D" parent="."]
+position = Vector2(-326, 583)
+texture = ExtResource("3_vrlb1")
+
+[node name="blu" parent="." instance=ExtResource("4_mgw7d")]
+position = Vector2(1268, 545)
+scale = Vector2(0.244297, 0.196691)

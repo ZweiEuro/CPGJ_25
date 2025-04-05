@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ird8d118ncdq"]
+
+[ext_resource type="Texture2D" uid="uid://4eyhx7kpptum" path="res://objects/character/calm.svg" id="1_egqiw"]
+[ext_resource type="Script" uid="uid://g0shsjx4hfo7" path="res://objects/character/blu.gd" id="2_t5ras"]
+[ext_resource type="Texture2D" uid="uid://cb32115qk0rn1" path="res://objects/character/cuss_emote.svg" id="3_nes65"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nes65"]
+diffuse_texture = ExtResource("3_nes65")
+
+[node name="blu" type="Sprite2D"]
+texture = ExtResource("1_egqiw")
+script = ExtResource("2_t5ras")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-3, -151)
+emitting = false
+amount = 4
+texture = SubResource("CanvasTexture_nes65")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(100, 20)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0

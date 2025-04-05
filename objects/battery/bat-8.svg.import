@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4eyhx7kpptum"
-path="res://.godot/imported/calm.svg-6618c2ddbc3c644bed3b6c163129b49c.ctex"
+uid="uid://ci6fmb1sywr33"
+path="res://.godot/imported/bat-8.svg-1e208005f37275fe467bc5271f1c8e1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/character/calm.svg"
-dest_files=["res://.godot/imported/calm.svg-6618c2ddbc3c644bed3b6c163129b49c.ctex"]
+source_file="res://objects/battery/bat-8.svg"
+dest_files=["res://.godot/imported/bat-8.svg-1e208005f37275fe467bc5271f1c8e1d.ctex"]
 
 [params]
 
