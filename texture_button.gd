@@ -21,6 +21,12 @@ var audio_loop_stream: AudioStreamWAV = null;
 @export_file("*.wav") var audio_winddown_path: String = "";
 var audio_winddown_stream: AudioStreamWAV = null;
 
+# on click audio sounds
+
+var click_audio_player: AudioStreamPlayer2D = null;
+
+@export_file var mouse_click_interaction_paths: Array[String]
+var mouse_click_interaction_streams: Array[AudioStreamWAV] = [];
 
 enum MachineState { start, loop, stop}
 var machine_state: MachineState  = MachineState.stop;
@@ -49,11 +55,19 @@ func _ready():
 	self.audio_player.finished.connect(self.on_audio_played)
 	self.add_child(audio_player);
 	
-	print(audio_windup_path, audio_windup_path, audio_winddown_path)
+	click_audio_player = AudioStreamPlayer2D.new();
+	self.click_audio_player.finished.connect(self.on_audio_played)
+	self.add_child(click_audio_player);
 	
 	audio_windup_stream = load_file_from_path(audio_windup_path, "wav")
 	audio_loop_stream = load_file_from_path(audio_loop_path, "wav")
 	audio_winddown_stream = load_file_from_path(audio_winddown_path, "wav")
+	
+	for path in mouse_click_interaction_paths:
+		var file = load_file_from_path(path,"wav")
+		if file == null:
+			print("ERR: could not load interaction file? ", path)
+		mouse_click_interaction_streams.push_back(file);
 	
 	select_texture()
 
@@ -74,6 +88,13 @@ func on_audio_played():
 				
 func _on_pressed() -> void:
 	
+	# clicking sound effect
+	self.click_audio_player.stop();
+	self.click_audio_player.stream = mouse_click_interaction_streams[randi_range(0, len(mouse_click_interaction_streams) - 1)];
+	self.click_audio_player.play();
+	
+	
+	# transition the statea machine
 	self.audio_player.stop();
 	if( self.machine_state == MachineState.stop):
 		self.machine_state = MachineState.start

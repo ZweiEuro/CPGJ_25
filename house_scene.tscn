@@ -8,3 +8,4 @@
 audio_windup_path = "uid://bwxxpehf51tr8"
 audio_loop_path = "uid://djr4ao0e8ke1v"
 audio_winddown_path = "uid://c23v3i1ujjn8"
+mouse_click_interaction_paths = Array[String](["uid://bmjtqswu8q1gr", "uid://e7cwv7k865qq", "uid://bh7t1yqgx6l1s", "uid://b5apecvjov86g"])
