@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl7iwj6uechb8"]
+
+[ext_resource type="Script" uid="uid://d3yil4o7x50bl" path="res://objects/windmill/windmill.gd" id="1_uaend"]
+[ext_resource type="Texture2D" uid="uid://bnrx8lcng643j" path="res://objects/windmill/stand.svg" id="1_y7bvc"]
+[ext_resource type="Texture2D" uid="uid://di5m6y47wjo6u" path="res://objects/windmill/blades.svg" id="2_uaend"]
+
+[node name="windmill" type="Node2D"]
+script = ExtResource("1_uaend")
+
+[node name="stem" type="Sprite2D" parent="."]
+texture = ExtResource("1_y7bvc")
+
+[node name="blades" type="Node2D" parent="."]
+position = Vector2(2, -103)
+
+[node name="blade" type="Sprite2D" parent="blades"]
+texture = ExtResource("2_uaend")
+offset = Vector2(-4.54, -16.89)
+
+[node name="Button" type="Button" parent="blades"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1.71562
+offset_top = -1.97205
+offset_right = 128.716
+offset_bottom = 14.0279
+rotation = 0.560251
+
+[node name="Button2" type="Button" parent="blades"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 15.7156
+offset_top = -126.972
+offset_right = 142.716
+offset_bottom = -110.972
+rotation = 1.57254
+
+[node name="Button3" type="Button" parent="blades"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 5.71562
+offset_top = 16.0279
+offset_right = 113.716
+offset_bottom = 33.0279
+rotation = 2.76635

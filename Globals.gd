@@ -2,7 +2,7 @@ extends Node
 
 enum Position { kitchen, living_room, bath, level1 ,bedroom, level2, level3, entry, garden, spawn, console, lampl3}
 
-var level1 = [Position.kitchen, Position.living_room, Position.garden, Position.entry, Position.spawn];
+var level1 = [Position.kitchen, Position.living_room, Position.garden, Position.spawn,  Position.entry,];
 var level2 = [Position.bath,Position.bedroom];
 var level3 = [Position.console, Position. lampl3];
 
@@ -29,7 +29,7 @@ func get_random_room() -> Position:
 	
 	match level:
 		0:
-			return level1[randi_range(0,len(level1)-1)];
+			return level1[randi_range(0,len(level1)-2)]; # do not allow spawn
 		1:
 			return level2[randi_range(0,len(level2)-1)];
 		2: 

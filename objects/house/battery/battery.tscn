@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://8iqd2okhe2nf"]
+[gd_scene load_steps=5 format=3 uid="uid://8iqd2okhe2nf"]
 
 [ext_resource type="Texture2D" uid="uid://d24i3htktmtqj" path="res://objects/house/battery/bat-1.svg" id="1_3s1qy"]
 [ext_resource type="Script" uid="uid://c7qg0wjq0k2ig" path="res://objects/house/battery/battery.gd" id="1_xjq3l"]
+[ext_resource type="AudioStream" uid="uid://b24cfnewrjyb2" path="res://objects/windmill/SFX_energyDrain_goesUp_oneShot_V1.wav" id="3_i1ely"]
+[ext_resource type="AudioStream" uid="uid://dh3c1ta7tva3" path="res://objects/windmill/SFX_energyDrain_goesDown_oneShot_V1.wav" id="4_afa00"]
 
 [node name="battery" type="Sprite2D"]
 texture = ExtResource("1_3s1qy")
 centered = false
 script = ExtResource("1_xjq3l")
+
+[node name="power_gain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i1ely")
+volume_db = 20.0
+
+[node name="power_drain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_afa00")
+volume_db = 20.0
