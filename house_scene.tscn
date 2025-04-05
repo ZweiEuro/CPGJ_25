@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://3cv06u1fja7u"]
+
+[ext_resource type="Script" uid="uid://cdpvpcci03ery" path="res://texture_button.gd" id="1_gjwje"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gjwje"]
+blend_mode = 1
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7i2su"]
+size = Vector2(100, 100)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4o060"]
+diffuse_texture = SubResource("PlaceholderTexture2D_7i2su")
+
+[node name="HouseScene" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+material = SubResource("CanvasItemMaterial_gjwje")
+offset_left = 199.0
+offset_top = 148.0
+offset_right = 299.0
+offset_bottom = 248.0
+texture_normal = SubResource("CanvasTexture_4o060")
+script = ExtResource("1_gjwje")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="toggled" from="TextureButton" to="TextureButton" method="_on_toggled"]

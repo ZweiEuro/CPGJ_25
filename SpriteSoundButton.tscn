@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdnutfbk01qdu"]
+
+[ext_resource type="Script" uid="uid://cdpvpcci03ery" path="res://texture_button.gd" id="1_sw308"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xi38y"]
+blend_mode = 1
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gjwje"]
+size = Vector2(100, 100)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x2533"]
+diffuse_texture = SubResource("PlaceholderTexture2D_gjwje")
+
+[node name="TextureButton" type="TextureButton"]
+material = SubResource("CanvasItemMaterial_xi38y")
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = SubResource("CanvasTexture_x2533")
+script = ExtResource("1_sw308")
+
+[node name="StreamPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]
