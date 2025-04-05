@@ -18,7 +18,5 @@ offset_bottom = 100.0
 texture_normal = SubResource("CanvasTexture_x2533")
 script = ExtResource("1_sw308")
 
-[node name="StreamPlayer" type="AudioStreamPlayer2D" parent="."]
-
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]
