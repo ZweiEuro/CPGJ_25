@@ -87,6 +87,7 @@ offset_left = -58.9446
 offset_top = -474.287
 offset_right = 41.0554
 offset_bottom = -374.287
+power_drain_per_second = 2
 texture_on_path = "uid://howsydtod1wm"
 texture_off_path = "uid://bliwc7op2muet"
 audio_windup_path = "uid://giq7oqers6oc"
@@ -97,6 +98,7 @@ offset_left = 49.0
 offset_top = 344.0
 offset_right = 178.0
 offset_bottom = 544.0
+power_drain_per_second = 8
 texture_on_path = "uid://cr8a86uyfjt5k"
 texture_off_path = "uid://dj2rcr654yi8s"
 audio_windup_path = "uid://23i2eei7t83k"
@@ -104,10 +106,11 @@ audio_loop_path = "uid://uh177s8jmsn3"
 audio_winddown_path = "uid://b7kvtlmhpdofm"
 
 [node name="hairdryer" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = -312.734
-offset_top = -48.1161
-offset_right = -242.734
-offset_bottom = 71.8839
+offset_left = -307.822
+offset_top = -51.553
+offset_right = -243.822
+offset_bottom = 68.447
+power_drain_per_second = 4
 texture_on_path = "uid://667gb4uuegdv"
 texture_off_path = "uid://btrp8xddw8tc0"
 audio_windup_path = "uid://ch4lr8lanxf6i"
@@ -115,10 +118,11 @@ audio_loop_path = "uid://cqwqx4e0jvpx0"
 audio_winddown_path = "uid://7k2a0oe47pms"
 
 [node name="radio" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = 116.252
-offset_top = 70.4557
-offset_right = 180.252
-offset_bottom = 120.456
+offset_left = 116.0
+offset_top = 69.0
+offset_right = 200.0
+offset_bottom = 121.0
+power_drain_per_second = 1
 texture_on_path = "uid://blaoo8bg35lp0"
 texture_off_path = "uid://b1g4yrjvel2er"
 audio_windup_path = "uid://d38weseeqer3"
@@ -126,31 +130,23 @@ audio_loop_path = "uid://bcmpice0plpgs"
 audio_winddown_path = "uid://bmdwf2p5f7ugn"
 
 [node name="faucet" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = -168.647
-offset_top = 37.8055
-offset_right = -107.647
-offset_bottom = 92.8055
+offset_left = -171.922
+offset_top = 36.0871
+offset_right = -110.922
+offset_bottom = 91.0871
+power_drain_per_second = 5
 texture_on_path = "uid://deftrkufh7qm6"
 texture_off_path = "uid://c3pfbpaxm78c3"
 audio_windup_path = "uid://ciq5xgbdooiiu"
 audio_loop_path = "uid://dya6je68q8q2h"
 audio_winddown_path = "uid://b1beent7wjiad"
 
-[node name="standing_lamp" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = -116.252
-offset_top = 319.628
-offset_right = -19.2518
-offset_bottom = 546.628
-texture_on_path = "uid://cc4yeuiaod7g6"
-texture_off_path = "uid://ctx0of4qe6fe1"
-audio_windup_path = "uid://cvx17vchh3ta"
-audio_winddown_path = "uid://dttuj37w86prd"
-
 [node name="stove" parent="House/appliances" instance=ExtResource("1_gjwje")]
 offset_left = 206.0
 offset_top = 369.0
 offset_right = 353.0
 offset_bottom = 545.0
+power_drain_per_second = 6
 texture_on_path = "uid://boqr6rjo7d68l"
 texture_off_path = "uid://blcjf8lsyrx85"
 audio_windup_path = "uid://ipkbmtekts42"
@@ -162,6 +158,7 @@ offset_left = -277.0
 offset_top = 260.0
 offset_right = -88.0
 offset_bottom = 383.0
+power_drain_per_second = 4
 texture_on_path = "uid://cb5ns2pmk3823"
 texture_off_path = "uid://bouiodoli26wj"
 audio_windup_path = "uid://bwxxpehf51tr8"
@@ -173,11 +170,23 @@ offset_left = -193.0
 offset_top = -318.0
 offset_right = -44.0
 offset_bottom = -213.0
+power_drain_per_second = 4
 texture_on_path = "uid://cb5ns2pmk3823"
 texture_off_path = "uid://bouiodoli26wj"
 audio_windup_path = "uid://bwxxpehf51tr8"
 audio_loop_path = "uid://djr4ao0e8ke1v"
 audio_winddown_path = "uid://c23v3i1ujjn8"
+
+[node name="standing_lamp" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -129.351
+offset_top = 317.91
+offset_right = -32.3506
+offset_bottom = 544.91
+power_drain_per_second = 2
+texture_on_path = "uid://cc4yeuiaod7g6"
+texture_off_path = "uid://ctx0of4qe6fe1"
+audio_windup_path = "uid://cvx17vchh3ta"
+audio_winddown_path = "uid://dttuj37w86prd"
 
 [node name="Tree1" type="Sprite2D" parent="."]
 position = Vector2(1076, 456)

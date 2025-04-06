@@ -56,12 +56,20 @@ func get_score_multiplier():
 	
 	return 1;
 	
-func on_power_drained(change: int):
+var previous_level = 0
+func on_power_drained(change: int):	
 	self.charge_percentage -= change;
 	if(self.charge_percentage <= 0):
 		self.charge_percentage = 0
-	else:
+	
+	
+	# bar sounds
+	var current_level = self.get_charge_bar_level()
+	
+	if(current_level < 3  && previous_level > current_level ):
 		$power_drain.play();
+	
+	self.previous_level = current_level
 	set_current_level_sprite();
 	
 func on_power_gained(change: int):

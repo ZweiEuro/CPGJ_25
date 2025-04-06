@@ -103,7 +103,7 @@ func go_to_pos(goal_pos: Globals.Position):
 	
 	for pos in current_route:
 		var point:Vector2 = $"../House".get_room_point(pos);
-		tween.tween_property(self, "position", point, 1)
+		tween.tween_property(self, "position", point, 4)
 		
 	tween.tween_callback(self.tween_end)
 	
