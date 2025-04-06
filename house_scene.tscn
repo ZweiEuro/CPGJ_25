@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=13 format=3 uid="uid://3cv06u1fja7u"]
 
+[ext_resource type="Texture2D" uid="uid://dnbdb5kl50fcs" path="res://objects/house/sky.png" id="1_d0g8g"]
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
 [ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://objects/house/main_background.svg" id="2_4o060"]
 [ext_resource type="Script" uid="uid://8ilgkf1yi3dx" path="res://objects/house/house.gd" id="2_w2oyl"]
@@ -14,6 +15,11 @@
 
 [node name="HouseScene" type="Node2D"]
 
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(419, 325)
+scale = Vector2(0.610743, 0.581926)
+texture = ExtResource("1_d0g8g")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(621, 727)
 scale = Vector2(42.5842, 1.20614)
@@ -24,7 +30,7 @@ region_rect = Rect2(374.443, 434.861, 32.6555, 270.574)
 [node name="generators" type="Node2D" parent="."]
 
 [node name="windmill" parent="generators" instance=ExtResource("10_2ikg6")]
-position = Vector2(996, 256)
+position = Vector2(956, 392)
 
 [node name="House" type="Sprite2D" parent="."]
 position = Vector2(531, 322)
