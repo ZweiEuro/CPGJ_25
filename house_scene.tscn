@@ -41,7 +41,7 @@ script = ExtResource("2_w2oyl")
 [node name="points" type="Node2D" parent="House"]
 
 [node name="kitchen" type="Node2D" parent="House/points"]
-position = Vector2(191.57, 517.248)
+position = Vector2(194.845, 524.122)
 scale = Vector2(1.63735, 1.71843)
 
 [node name="living_room" type="Node2D" parent="House/points"]
@@ -63,7 +63,7 @@ position = Vector2(9.8241, 137.475)
 position = Vector2(11.4615, -214.804)
 
 [node name="entry" type="Node2D" parent="House/points"]
-position = Vector2(397.876, 503.5)
+position = Vector2(407.7, 513.81)
 
 [node name="spawn" type="Node2D" parent="House/points"]
 position = Vector2(1108.49, 431.326)
@@ -94,10 +94,10 @@ audio_windup_path = "uid://giq7oqers6oc"
 audio_winddown_path = "uid://3bcljfnuc7bi"
 
 [node name="fridge" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = 49.0
-offset_top = 344.0
-offset_right = 178.0
-offset_bottom = 544.0
+offset_left = 67.1314
+offset_top = 341.968
+offset_right = 196.131
+offset_bottom = 541.968
 power_drain_per_second = 8
 texture_on_path = "uid://cr8a86uyfjt5k"
 texture_off_path = "uid://dj2rcr654yi8s"
@@ -118,10 +118,10 @@ audio_loop_path = "uid://cqwqx4e0jvpx0"
 audio_winddown_path = "uid://7k2a0oe47pms"
 
 [node name="radio" parent="House/appliances" instance=ExtResource("1_gjwje")]
-offset_left = 116.0
-offset_top = 69.0
-offset_right = 200.0
-offset_bottom = 121.0
+offset_left = 117.889
+offset_top = 67.0188
+offset_right = 201.889
+offset_bottom = 119.019
 power_drain_per_second = 1
 texture_on_path = "uid://blaoo8bg35lp0"
 texture_off_path = "uid://b1g4yrjvel2er"
