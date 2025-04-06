@@ -20,8 +20,10 @@ func _ready() -> void:
 	
 	self.go_to_pos(Globals.get_random_room())
 	
-	
+
+var current_mood = Moods.calm;
 func choose_mood(mood: Moods):
+	current_mood = mood;
 	match mood:
 		Moods.calm:
 			self.texture = self.mood_calm;
@@ -30,16 +32,33 @@ func choose_mood(mood: Moods):
 		Moods.angry:
 			self.texture = self.mood_angry;
 			$CPUParticles2D.emitting = true;
+			$AudioStreamPlayer2D.play()
 
 enum Position { kitchen, living_room, bath, ladder ,bedroom, level2, level3, entry, garden, spawn}
 
+
+var emotion_counter = 0;
 func tween_end():
 	var new_goal = Globals.get_random_room()
 	while( new_goal == current_position):
 		new_goal = Globals.get_random_room()
 	self.go_to_pos(new_goal)
 	
+	emotion_counter += 1;
+	
+	if emotion_counter > randi_range(0, 2):
+		var next_mood = Moods.values().get(randi_range(0, len(Moods.keys()) - 1))
+		
+		while(next_mood == current_mood):
+			next_mood = Moods.values().get(randi_range(0, len(Moods.keys()) - 1))
+		choose_mood(next_mood);
+		emotion_counter = 0 ;
+	
 func go_to_pos(goal_pos: Globals.Position):
+	
+	if(self.current_mood != Moods.calm):
+		choose_mood(Moods.calm)
+	
 	
 	var current_route: Array[Position];
 	

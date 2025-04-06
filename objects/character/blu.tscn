@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ird8d118ncdq"]
+[gd_scene load_steps=7 format=3 uid="uid://ird8d118ncdq"]
 
 [ext_resource type="Texture2D" uid="uid://4eyhx7kpptum" path="res://objects/character/calm.svg" id="1_egqiw"]
 [ext_resource type="Script" uid="uid://g0shsjx4hfo7" path="res://objects/character/blu.gd" id="2_t5ras"]
 [ext_resource type="Texture2D" uid="uid://cb32115qk0rn1" path="res://objects/character/cuss_emote.svg" id="3_nes65"]
+[ext_resource type="AudioStream" uid="uid://b8foujxdkouhy" path="res://objects/character/angry.wav" id="4_qdpnq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nes65"]
 diffuse_texture = ExtResource("3_nes65")
@@ -37,3 +38,6 @@ collision_mask = 0
 position = Vector2(0, -285.5)
 scale = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_nes65")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qdpnq")
