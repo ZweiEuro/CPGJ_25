@@ -15,3 +15,10 @@ texture = ExtResource("1_4lxve")
 position = Vector2(530, 312)
 texture = ExtResource("2_86bvc")
 script = ExtResource("3_0aank")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 373.0
+offset_top = 555.0
+offset_right = 718.0
+offset_bottom = 617.0
+text = "Your Eco-Score: 121345 Max-Multiplier: 6"

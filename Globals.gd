@@ -40,8 +40,16 @@ func get_random_room() -> Position:
 
 
 var score = 0;
-func set_end_score(val: int):
+var mult = 1;
+func set_end_score(val: int, new_mult: int):
 	score = val;
+	
+	if(new_mult > mult):
+		mult = new_mult
 	
 func get_end_score():
 	return score;
+
+func get_end_mult():
+	return mult;
+	
