@@ -16,7 +16,7 @@ func load_file_from_path(filePath:  String, ext: String, alternative_file = ""):
 	else:
 		if(ext == "wav"):
 			ret = AudioStreamWAV.load_from_file(filePath);
-		if(ext == "svg"):
+		if(ext == "svg" or ext == "png"):
 			var image = Image.load_from_file(filePath)
 			ret = ImageTexture.create_from_image(image)
 	

@@ -2,12 +2,14 @@ extends Sprite2D
 
 var spriteSet: Array[Texture2D] = [];
 
-var charge_percentage = 100;
+var charge_percentage = 65;
 
+func get_charge_bar_level() -> int:
+	return lerp(0, 7, charge_percentage / 100.0);
+	
 
 func set_current_level_sprite():
-	var level = lerp(0, 7, charge_percentage / 100.0);
-	self.texture = self.spriteSet[level];
+	self.texture = self.spriteSet[get_charge_bar_level()];
 	
 
 func _ready():
@@ -23,20 +25,51 @@ func _ready():
 	set_current_level_sprite();
 	
 	
+var seconds_charge_at_max = 0.0;
+
+func _process(delta: float) -> void:
+	if(get_charge_bar_level() >= 6):
+		if seconds_charge_at_max == 0:
+			$battery_max_mult.play();
+		
+		seconds_charge_at_max += delta;
+	else:
+		seconds_charge_at_max = 0;
+
+var mult_dict = {
+	2: 2,
+	10: 5,
+	15: 7,
+	20: 8,
+	30: 10
+}
+
+
+func get_score_multiplier():
 	
-func on_power_drained():
-	self.charge_percentage -= 10;
+	var keys = mult_dict.keys()
+	keys.reverse()
+	
+	for key in keys:
+		if key <= seconds_charge_at_max:
+			return mult_dict[key];
+	
+	return 1;
+	
+func on_power_drained(change: int):
+	self.charge_percentage -= change;
 	if(self.charge_percentage <= 0):
 		self.charge_percentage = 0
 	else:
 		$power_drain.play();
 	set_current_level_sprite();
 	
-func on_power_gained():
-	self.charge_percentage += 10;
+func on_power_gained(change: int):
+	self.charge_percentage += change;
 	if(self.charge_percentage >= 100):
 		self.charge_percentage = 100
 	else: 
-		$power_gain.play()
+		pass
+		#$power_gain.play()
 	
 	set_current_level_sprite();

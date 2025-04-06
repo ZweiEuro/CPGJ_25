@@ -1,12 +1,14 @@
 extends TextureButton
 
+# stats
+@export var power_drain_per_second = 10;
 
 
 # textures
-@export_file("*.svg") var texture_on_path: String = "";
+@export_file("*.svg","*.png") var texture_on_path: String = "";
 var texture_on: Texture = null;
 
-@export_file("*.svg") var texture_off_path: String = "";
+@export_file("*.svg","*.png") var texture_off_path: String = "";
 var texture_off: Texture = null;
 
 # Audio 
@@ -98,9 +100,11 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 		self.audio_player.play()
 		select_texture()
 
-signal power_drained
+signal power_drained(change)
 
-var time_turned_on = 0.0 
+var time_turned_on = 0.0
+
+var seconds_max_power = 0.0;
 
 func _process(delta: float) -> void:
 	if (self.machine_state != MachineState.stop):
@@ -108,4 +112,7 @@ func _process(delta: float) -> void:
 		
 	if( time_turned_on >= 1 ):
 		time_turned_on -= 1.0;
-		power_drained.emit()
+		power_drained.emit(self.power_drain_per_second)
+		
+
+		

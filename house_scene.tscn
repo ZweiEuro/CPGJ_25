@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=12 format=3 uid="uid://3cv06u1fja7u"]
 
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
 [ext_resource type="Texture2D" uid="uid://c2lv4dkep2e68" path="res://objects/house/main_background.svg" id="2_4o060"]
 [ext_resource type="Script" uid="uid://8ilgkf1yi3dx" path="res://objects/house/house.gd" id="2_w2oyl"]
 [ext_resource type="Texture2D" uid="uid://cs7qoov1kgvob" path="res://images/deco/tree_1.svg" id="3_7i2su"]
+[ext_resource type="Texture2D" uid="uid://wib4akigugef" path="res://objects/house/main_background.png" id="3_e1ycl"]
 [ext_resource type="Texture2D" uid="uid://55532tcoc11" path="res://images/deco/bushes.svg" id="3_vrlb1"]
 [ext_resource type="PackedScene" uid="uid://8iqd2okhe2nf" path="res://objects/house/battery/battery.tscn" id="3_wtlvq"]
-[ext_resource type="PackedScene" uid="uid://ird8d118ncdq" path="res://objects/character/blu.tscn" id="4_mgw7d"]
 [ext_resource type="Texture2D" uid="uid://dmjbwus0553hi" path="res://images/deco/tree_3.svg" id="4_w2oyl"]
 [ext_resource type="AudioStream" uid="uid://c0ok76ry07eeb" path="res://general_sounds/score/music_mainTheme_loopV1.wav" id="9_bulkk"]
 [ext_resource type="PackedScene" uid="uid://cl7iwj6uechb8" path="res://objects/windmill/windmill.tscn" id="10_2ikg6"]
+[ext_resource type="Script" uid="uid://dlxr1876o1pb5" path="res://score.gd" id="11_e1ycl"]
 
 [node name="HouseScene" type="Node2D"]
 
@@ -28,13 +29,13 @@ position = Vector2(996, 256)
 [node name="House" type="Sprite2D" parent="."]
 position = Vector2(531, 322)
 scale = Vector2(0.610743, 0.581926)
-texture = ExtResource("2_4o060")
+texture = ExtResource("3_e1ycl")
 script = ExtResource("2_w2oyl")
 
 [node name="points" type="Node2D" parent="House"]
 
 [node name="kitchen" type="Node2D" parent="House/points"]
-position = Vector2(201.394, 488.035)
+position = Vector2(191.57, 517.248)
 scale = Vector2(1.63735, 1.71843)
 
 [node name="living_room" type="Node2D" parent="House/points"]
@@ -44,7 +45,7 @@ position = Vector2(-221.042, 512.093)
 position = Vector2(-203.031, 154.659)
 
 [node name="level1" type="Node2D" parent="House/points"]
-position = Vector2(13.0988, 493.19)
+position = Vector2(19.6482, 527.558)
 
 [node name="bedroom" type="Node2D" parent="House/points"]
 position = Vector2(222.68, 146.067)
@@ -75,11 +76,97 @@ position = Vector2(371.678, 146.067)
 
 [node name="appliances" type="Node2D" parent="House"]
 
+[node name="ceiling_lamp" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -58.9446
+offset_top = -474.287
+offset_right = 41.0554
+offset_bottom = -374.287
+texture_on_path = "uid://howsydtod1wm"
+texture_off_path = "uid://bliwc7op2muet"
+audio_windup_path = "uid://giq7oqers6oc"
+audio_winddown_path = "uid://3bcljfnuc7bi"
+
+[node name="fridge" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = 49.0
+offset_top = 344.0
+offset_right = 178.0
+offset_bottom = 544.0
+texture_on_path = "uid://cr8a86uyfjt5k"
+texture_off_path = "uid://dj2rcr654yi8s"
+audio_windup_path = "uid://23i2eei7t83k"
+audio_loop_path = "uid://uh177s8jmsn3"
+audio_winddown_path = "uid://b7kvtlmhpdofm"
+
+[node name="hairdryer" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -312.734
+offset_top = -48.1161
+offset_right = -242.734
+offset_bottom = 71.8839
+texture_on_path = "uid://667gb4uuegdv"
+texture_off_path = "uid://btrp8xddw8tc0"
+audio_windup_path = "uid://ch4lr8lanxf6i"
+audio_loop_path = "uid://cqwqx4e0jvpx0"
+audio_winddown_path = "uid://7k2a0oe47pms"
+
+[node name="radio" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = 116.252
+offset_top = 70.4557
+offset_right = 180.252
+offset_bottom = 120.456
+texture_on_path = "uid://blaoo8bg35lp0"
+texture_off_path = "uid://b1g4yrjvel2er"
+audio_windup_path = "uid://d38weseeqer3"
+audio_loop_path = "uid://bcmpice0plpgs"
+audio_winddown_path = "uid://bmdwf2p5f7ugn"
+
+[node name="faucet" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -168.647
+offset_top = 37.8055
+offset_right = -107.647
+offset_bottom = 92.8055
+texture_on_path = "uid://deftrkufh7qm6"
+texture_off_path = "uid://c3pfbpaxm78c3"
+audio_windup_path = "uid://ciq5xgbdooiiu"
+audio_loop_path = "uid://dya6je68q8q2h"
+audio_winddown_path = "uid://b1beent7wjiad"
+
+[node name="standing_lamp" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -116.252
+offset_top = 319.628
+offset_right = -19.2518
+offset_bottom = 546.628
+texture_on_path = "uid://cc4yeuiaod7g6"
+texture_off_path = "uid://ctx0of4qe6fe1"
+audio_windup_path = "uid://cvx17vchh3ta"
+audio_winddown_path = "uid://dttuj37w86prd"
+
+[node name="stove" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = 206.0
+offset_top = 369.0
+offset_right = 353.0
+offset_bottom = 545.0
+texture_on_path = "uid://boqr6rjo7d68l"
+texture_off_path = "uid://blcjf8lsyrx85"
+audio_windup_path = "uid://ipkbmtekts42"
+audio_loop_path = "uid://bhhxfk74wchjp"
+audio_winddown_path = "uid://bhpf7p3vb112g"
+
 [node name="TV" parent="House/appliances" instance=ExtResource("1_gjwje")]
 offset_left = -277.0
 offset_top = 260.0
-offset_right = -98.0
-offset_bottom = 379.0
+offset_right = -88.0
+offset_bottom = 383.0
+texture_on_path = "uid://cb5ns2pmk3823"
+texture_off_path = "uid://bouiodoli26wj"
+audio_windup_path = "uid://bwxxpehf51tr8"
+audio_loop_path = "uid://djr4ao0e8ke1v"
+audio_winddown_path = "uid://c23v3i1ujjn8"
+
+[node name="TV2" parent="House/appliances" instance=ExtResource("1_gjwje")]
+offset_left = -193.0
+offset_top = -318.0
+offset_right = -44.0
+offset_bottom = -213.0
 texture_on_path = "uid://cb5ns2pmk3823"
 texture_off_path = "uid://bouiodoli26wj"
 audio_windup_path = "uid://bwxxpehf51tr8"
@@ -102,11 +189,12 @@ texture = ExtResource("3_vrlb1")
 position = Vector2(-326, 583)
 texture = ExtResource("3_vrlb1")
 
-[node name="blu" parent="." instance=ExtResource("4_mgw7d")]
-position = Vector2(1268, 545)
-scale = Vector2(0.244297, 0.196691)
-
 [node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_bulkk")
 volume_db = -5.445
 autoplay = true
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_right = 324.0
+offset_bottom = 108.0
+script = ExtResource("11_e1ycl")
