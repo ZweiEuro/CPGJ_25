@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3cv06u1fja7u"]
+[gd_scene load_steps=14 format=3 uid="uid://3cv06u1fja7u"]
 
 [ext_resource type="Texture2D" uid="uid://dnbdb5kl50fcs" path="res://objects/house/sky.png" id="1_d0g8g"]
 [ext_resource type="PackedScene" uid="uid://bdnutfbk01qdu" path="res://SpriteSoundButton.tscn" id="1_gjwje"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c0ok76ry07eeb" path="res://general_sounds/score/music_mainTheme_loopV1.wav" id="9_bulkk"]
 [ext_resource type="PackedScene" uid="uid://cl7iwj6uechb8" path="res://objects/windmill/windmill.tscn" id="10_2ikg6"]
 [ext_resource type="Script" uid="uid://dlxr1876o1pb5" path="res://score.gd" id="11_e1ycl"]
+[ext_resource type="Texture2D" uid="uid://d1g6467bxejcc" path="res://objects/windmill/help_text.png" id="13_qa7db"]
 
 [node name="HouseScene" type="Node2D"]
 
@@ -213,3 +214,9 @@ autoplay = true
 offset_right = 324.0
 offset_bottom = 108.0
 script = ExtResource("11_e1ycl")
+
+[node name="HelpText" type="Sprite2D" parent="."]
+position = Vector2(1058, 245)
+rotation = 1.05418
+scale = Vector2(0.50939, 0.625396)
+texture = ExtResource("13_qa7db")
