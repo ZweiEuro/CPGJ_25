@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba1600n7ktdct"]
+[gd_scene load_steps=15 format=3 uid="uid://ba1600n7ktdct"]
 
 [ext_resource type="AudioStream" uid="uid://c1mq23u478f35" path="res://ui_story/intro_bg.wav" id="2_ayt76"]
+[ext_resource type="Texture2D" uid="uid://dh45j3vbuavwy" path="res://ui_story/splash_logo.png" id="2_h0kys"]
 [ext_resource type="Texture2D" uid="uid://6jjpon0ojqcf" path="res://ui_story/Untitled-2-08.png" id="2_y6ycx"]
 [ext_resource type="Texture2D" uid="uid://dp5bxha1f5ylm" path="res://ui_story/Untitled-2-09.png" id="3_dpxxx"]
 [ext_resource type="Texture2D" uid="uid://tpu5tyayg6t6" path="res://ui_story/Untitled-2-10.png" id="4_dk2oa"]
@@ -28,7 +29,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xsd0a"]
 resource_name = "the intro"
-length = 20.0
+length = 25.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,10 +37,10 @@ tracks/0/path = NodePath("../Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.63333, 5.40749, 6.66332, 10.0762, 11.0179, 11.5285, 12.0102, 13.0256, 13.7667, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.13333, 6.76666, 8.54082, 9.79665, 13.2095, 14.1512, 14.6618, 15.1435, 16.1589, 16.9, 23.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ExtResource("2_y6ycx"), ExtResource("3_dpxxx"), ExtResource("3_dpxxx"), ExtResource("4_dk2oa"), ExtResource("4_dk2oa"), ExtResource("5_7ufi4"), ExtResource("5_7ufi4"), ExtResource("6_h0kys"), ExtResource("6_h0kys"), ExtResource("7_dk2oa"), ExtResource("7_dk2oa")]
+"values": [ExtResource("2_h0kys"), ExtResource("2_y6ycx"), ExtResource("3_dpxxx"), ExtResource("3_dpxxx"), ExtResource("4_dk2oa"), ExtResource("4_dk2oa"), ExtResource("5_7ufi4"), ExtResource("5_7ufi4"), ExtResource("6_h0kys"), ExtResource("6_h0kys"), ExtResource("7_dk2oa"), ExtResource("7_dk2oa")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -53,21 +54,9 @@ tracks/1/keys = {
 "start_offset": 0.298565,
 "stream": ExtResource("2_ayt76")
 }],
-"times": PackedFloat32Array(0.333333)
+"times": PackedFloat32Array(3.46667)
 }
 tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../sound:stream_paused")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(20),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dmx7j"]
 _data = {
@@ -76,6 +65,11 @@ _data = {
 }
 
 [node name="Intro" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1562, 1059)
+scale = Vector2(3.10605, 2.0918)
+texture = ExtResource("2_h0kys")
 
 [node name="Untitled-2-08" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.937255)
@@ -92,9 +86,9 @@ movie_quit_on_finish = true
 script = ExtResource("8_dpxxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(591.5, 323)
-scale = Vector2(1.40199, 1.36421)
-texture = ExtResource("7_dk2oa")
+position = Vector2(610.684, 324.969)
+scale = Vector2(1.25533, 1.36139)
+texture = ExtResource("2_h0kys")
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(37, 677)
@@ -105,6 +99,7 @@ offset_left = 541.0
 offset_top = 358.0
 offset_right = 666.0
 offset_bottom = 411.0
+icon = ExtResource("2_h0kys")
 script = ExtResource("10_7ufi4")
 
 [connection signal="current_animation_changed" from="Untitled-2-08/AnimationPlayer" to="Untitled-2-08/AnimationPlayer" method="_on_current_animation_changed"]
