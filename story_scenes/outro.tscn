@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2jf0hi0i8q35"]
+
+[ext_resource type="Texture2D" uid="uid://dh45j3vbuavwy" path="res://ui_story/splash_logo.png" id="1_4lxve"]
+[ext_resource type="Texture2D" uid="uid://d0abifthabdeo" path="res://ui_story/bad_ending.png" id="2_86bvc"]
+[ext_resource type="Script" uid="uid://co13o7ro6icby" path="res://story_scenes/ending_pic.gd" id="3_0aank"]
+
+[node name="Outro" type="Node2D"]
+
+[node name="SplashLogo" type="Sprite2D" parent="."]
+position = Vector2(1795.37, 1113.5)
+scale = Vector2(3.56913, 2.22754)
+texture = ExtResource("1_4lxve")
+
+[node name="ending_pic" type="Sprite2D" parent="."]
+position = Vector2(530, 312)
+texture = ExtResource("2_86bvc")
+script = ExtResource("3_0aank")

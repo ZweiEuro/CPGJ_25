@@ -22,3 +22,5 @@ func _process(delta: float) -> void:
 		player.scale = Vector2(0.2, 0.2);
 		$"../".add_child(player)
 	
+	Globals.set_end_score(self.score)
+	

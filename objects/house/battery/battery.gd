@@ -61,6 +61,9 @@ func on_power_drained(change: int):
 	self.charge_percentage -= change;
 	if(self.charge_percentage <= 0):
 		self.charge_percentage = 0
+		
+		
+		get_tree().change_scene_to_file("res://story_scenes/outro.tscn")
 	
 	
 	# bar sounds
@@ -71,6 +74,7 @@ func on_power_drained(change: int):
 	
 	self.previous_level = current_level
 	set_current_level_sprite();
+
 	
 func on_power_gained(change: int):
 	self.charge_percentage += change;

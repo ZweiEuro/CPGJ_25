@@ -37,3 +37,11 @@ func get_random_room() -> Position:
 		
 	print("ERR no room!")
 	return Position.spawn;
+
+
+var score = 0;
+func set_end_score(val: int):
+	score = val;
+	
+func get_end_score():
+	return score;
