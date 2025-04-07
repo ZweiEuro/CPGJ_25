@@ -7,20 +7,7 @@ var level2 = [Position.bath,Position.bedroom];
 var level3 = [Position.console, Position. lampl3];
 
 
-func load_file_from_path(filePath:  String, ext: String, alternative_file = ""):
-	var ret = null
-	
-	if(filePath == ""):
-		if(alternative_file != ""):
-			ret = load_file_from_path(alternative_file, "svg");
-	else:
-		if(ext == "wav"):
-			ret = AudioStreamWAV.load_from_file(filePath);
-		if(ext == "svg" or ext == "png"):
-			var image = Image.load_from_file(filePath)
-			ret = ImageTexture.create_from_image(image)
-	
-	return ret;
+
 
 
 func get_random_room() -> Position:

@@ -40,8 +40,8 @@ var machine_state: MachineState  = MachineState.stop;
 
 func _ready():
 	
-	texture_on = Globals.load_file_from_path(texture_on_path, "svg", "res://placeholder/icon_on.svg")
-	texture_off = Globals.load_file_from_path(texture_off_path, "svg", "res://placeholder/icon_off.svg")
+	texture_on = load(texture_on_path)
+	texture_off = load(texture_off_path)
 	
 	audio_player = AudioStreamPlayer2D.new();
 	self.audio_player.finished.connect(self.on_audio_played)
@@ -51,15 +51,17 @@ func _ready():
 	self.click_audio_player.finished.connect(self.on_audio_played)
 	self.add_child(click_audio_player);
 	
-	audio_windup_stream = Globals.load_file_from_path(audio_windup_path, "wav")
-	audio_loop_stream = Globals.load_file_from_path(audio_loop_path, "wav")
-	audio_winddown_stream = Globals.load_file_from_path(audio_winddown_path, "wav")
+	audio_windup_stream = load(audio_windup_path)
+	audio_loop_stream = load(audio_loop_path)
+	audio_winddown_stream = load(audio_winddown_path)
 	
-	for path in mouse_click_interaction_paths:
-		var file = Globals.load_file_from_path(path,"wav")
-		if file == null:
-			print("ERR: could not load interaction file? ", path)
-		mouse_click_interaction_streams.push_back(file);
+	mouse_click_interaction_streams.push_back(load(mouse_click_interaction_paths[0]))
+	mouse_click_interaction_streams.push_back(load(mouse_click_interaction_paths[1]))
+	mouse_click_interaction_streams.push_back(load(mouse_click_interaction_paths[2]))
+	mouse_click_interaction_streams.push_back(load(mouse_click_interaction_paths[3]))
+	
+	
+
 	
 	select_texture()
 

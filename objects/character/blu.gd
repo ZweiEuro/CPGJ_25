@@ -13,9 +13,9 @@ var mood_angry: Texture = null;
 var current_position = Globals.Position.spawn;
 
 func _ready() -> void:
-	mood_calm = Globals.load_file_from_path("res://objects/character/calm.svg", "svg")
-	mood_excited = Globals.load_file_from_path("res://objects/character/excited.svg", "svg")
-	mood_angry = Globals.load_file_from_path("res://objects/character/angry.svg", "svg")
+	mood_calm = preload("res://objects/character/calm.svg")
+	mood_excited = preload("res://objects/character/excited.svg")
+	mood_angry = preload("res://objects/character/angry.svg")
 	
 	
 	self.go_to_pos(Globals.get_random_room())

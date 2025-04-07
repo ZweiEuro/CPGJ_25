@@ -13,8 +13,19 @@ func set_current_level_sprite():
 	
 
 func _ready():
-	for i in range(1,9):
-		spriteSet.push_back(Globals.load_file_from_path("res://objects/house/battery/bat-" + str(i) + ".svg", "svg"))
+	
+		
+	spriteSet.push_back(preload("res://objects/house/battery/bat-1.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-2.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-3.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-4.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-5.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-6.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-7.svg"))
+	spriteSet.push_back(preload("res://objects/house/battery/bat-8.svg"))
+	
+	
+		
 		
 	for applicance in $"../appliances".get_children():
 		applicance.power_drained.connect(self.on_power_drained);
