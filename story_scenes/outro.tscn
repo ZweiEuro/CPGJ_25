@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://2jf0hi0i8q35"]
+[gd_scene load_steps=5 format=3 uid="uid://2jf0hi0i8q35"]
 
 [ext_resource type="Texture2D" uid="uid://dh45j3vbuavwy" path="res://ui_story/splash_logo.png" id="1_4lxve"]
 [ext_resource type="Texture2D" uid="uid://d0abifthabdeo" path="res://ui_story/bad_ending.png" id="2_86bvc"]
 [ext_resource type="Script" uid="uid://co13o7ro6icby" path="res://story_scenes/ending_pic.gd" id="3_0aank"]
+[ext_resource type="Texture2D" uid="uid://vfg5fxx2g6v2" path="res://ui_story/Untitled-2-13.png" id="4_86bvc"]
 
 [node name="Outro" type="Node2D"]
 
@@ -22,3 +23,19 @@ offset_top = 555.0
 offset_right = 718.0
 offset_bottom = 617.0
 text = "Your Eco-Score: 121345 Max-Multiplier: 6"
+
+[node name="haunt_button" type="Sprite2D" parent="."]
+position = Vector2(955, 329)
+scale = Vector2(0.991639, 1)
+texture = ExtResource("4_86bvc")
+region_enabled = true
+region_rect = Rect2(61.5, 221, 299, 54)
+
+[node name="Button" type="Button" parent="haunt_button"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -142.441
+offset_top = -26.0
+offset_right = 148.559
+offset_bottom = 25.0
+
+[connection signal="pressed" from="haunt_button/Button" to="ending_pic" method="_on_button_pressed"]
